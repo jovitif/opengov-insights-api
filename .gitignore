@@ -1,1 +1,5 @@
 .env
+# Data files
+data/raw/
+data/processed/
+data/*.json

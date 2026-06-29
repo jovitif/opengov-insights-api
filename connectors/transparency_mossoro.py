@@ -1,12 +1,10 @@
 from typing import Any
 import requests
 
+from config.settings import MOSSORO_API
 from connectors.base import BaseConnector
 
 class TransparencyMossoroConnector(BaseConnector):
-
-    BASE_URL = "https://transparencia.e-publica.net/epublica-portal/rest/mossoro/api/v1"
-
     @property
     def source_name(self) -> str:
         return "mossoro"
@@ -14,7 +12,7 @@ class TransparencyMossoroConnector(BaseConnector):
     def extract(self, endpoint: str, params: dict | None = None) -> Any:
 
         response = requests.get(
-            f"{self.BASE_URL}/{endpoint}",
+            f"{MOSSORO_API}/{endpoint}",
             params=params,
             timeout=30,
         )
