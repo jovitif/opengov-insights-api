@@ -4,11 +4,8 @@ def transform_receita(raw):
 
     result = []
 
-
     for item in registros:
-
         receita = item["registro"]
-
 
         base = {
             "receita_codigo": receita["receita"]["codigo"],
